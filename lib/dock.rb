@@ -1,7 +1,6 @@
 class Dock
   attr_reader :name,
               :max_rental_time,
-              :rented_boats,
               :renters
 
   def initialize(name, max_rental_time)
@@ -12,15 +11,18 @@ class Dock
   end 
 
   def rent(boat, renter)
-    if @renters.include?(renter)
-      renter.rented_boats << boat
-    elsif
-      @renters << renter
-    end
+    renter.rented_boats << boat
+    @renters << renter
   end
 
   def log_hour
-    
+    renters = @renters.uniq
+    all = renters.each do |renter|
+      renter.rented_boats.each do |boat|
+        boat.hours_rented += 1
+      end
+    end
+    all
   end
 
   def return(boat)
