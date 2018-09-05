@@ -26,11 +26,7 @@ class Dock
   end
 
   def return(boat)
-    index = @rented_boats.index(boat)
-    renter = @renters[index]
-    # binding.pry
-    @rented_boats.delete(boat)
-    @renters.delete(renter)
+    
   end
 
 
