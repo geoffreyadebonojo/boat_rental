@@ -25,9 +25,7 @@ class Dock
     all
   end
 
-  def return(boat)
-    
-  end
+ 
 
 
 end

@@ -88,6 +88,8 @@ class DockTest < Minitest::Test
     
     dock.rent(kayak_1, patrick)
     dock.rent(kayak_2, patrick)
+
+    dock.log_hour
     binding.pry
   end
 
